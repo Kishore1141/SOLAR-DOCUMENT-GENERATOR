@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solar Documents Generator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="card">
+  <h1>Solar Documents Generator</h1>
+  <p class="sub">Fill in the details once. Both PDFs keep the exact original look (logo, colours, layout) &mdash; only the name, address/city, electricity consumer number and date change.</p>
+
+  <label for="name">Customer name</label>
+  <input type="text" id="name" placeholder="e.g. Radhabai Mahendrakar">
+
+  <label for="address">Full address (used in the Vendor Agreement)</label>
+  <input type="text" id="address" placeholder="House no, street, town, district, state, PIN">
+
+  <label for="city">City (used in the Quotation)</label>
+  <input type="text" id="city" placeholder="e.g. Jammalamadugu">
+
+  <label for="bill">Electricity consumer number (13 digits)</label>
+  <input type="text" id="bill" placeholder="13-digit consumer number" inputmode="numeric" maxlength="13">
+  <div class="hint" id="billHint">Must be exactly 13 digits.</div>
+
+  <div class="dates" id="dates"></div>
+
+  <div class="btnrow">
+    <button id="btnQuote">Download Quotation (.pdf)</button>
+    <button id="btnAgree">Download Agreement (.pdf)</button>
+  </div>
+  <div id="status"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

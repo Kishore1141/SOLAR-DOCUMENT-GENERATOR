@@ -40,6 +40,7 @@ solar_document_generator/
 ## Requirements
 
 - **Python 3.9+**
+- **Node.js and npm** (for Speed Insights and dependencies)
 - **LibreOffice** installed, with the `soffice` command available:
   - Windows: install from https://www.libreoffice.org/ (the default install path is
     already checked by `server.py`).
@@ -47,6 +48,11 @@ solar_document_generator/
   - Linux: `sudo apt install libreoffice` (or your distro's equivalent).
 
 ## Running it
+
+**First time setup:**
+```bash
+npm install  # Install Speed Insights and other npm dependencies
+```
 
 **Windows:** double-click `start.bat` (or run it from a command prompt).
 
@@ -80,6 +86,16 @@ it back over the same file — just make sure the five placeholder tags
 (`{NAME}`, `{ADDRESS}`, `{CITY}`, `{BILL}`, `{DATE}`) stay in the document, spelled
 exactly like that, wherever you want that value to appear.
 
+## Performance Monitoring
+
+This project includes **Vercel Speed Insights** for real-time performance monitoring.
+Speed Insights automatically tracks Core Web Vitals and other performance metrics when
+deployed to Vercel. The tracking script is loaded asynchronously and does not affect
+page load performance.
+
+**Note:** Speed Insights only collects data in production. No tracking occurs during
+local development.
+
 ## Troubleshooting
 
 - **"LibreOffice was not found"** — install LibreOffice and make sure `soffice` is on
@@ -88,3 +104,5 @@ exactly like that, wherever you want that value to appear.
 - **Port 5000 already in use** — set a different port before starting, e.g.
   `PORT=5001 python server.py` (macOS/Linux) or `set PORT=5001 && python server.py`
   (Windows).
+- **npm not found** — install Node.js from https://nodejs.org/ to get npm, then run
+  `npm install` in the project directory.
